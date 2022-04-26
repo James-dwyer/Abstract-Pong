@@ -5,7 +5,7 @@ Rectangle lPaddle, rPaddle;
 void setup(){
   fullScreen();
   
-  cHex = new Circle(displayWidth/2, displayHeight/2, displayWidth/50, displayHeight/50);
+  cHex = new Circle(width/2,height/2, width/50, width/50);
   lPaddle = new Rectangle(width/20,height/2-(height/5)/2,width/55,height/5);
   rPaddle = new Rectangle(width - width/20,height/2-(height/5)/2,width/55,height/5);
 };//end setup
