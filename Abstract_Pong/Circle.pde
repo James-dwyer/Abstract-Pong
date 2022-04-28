@@ -26,14 +26,26 @@ class Circle extends Shape{
       ballYSpeed = ballYSpeed*-1;
     }
     if (x+w/2 >= width || x-w/2  <= width*0) ballXSpeed *= -1;  
-   if (x-w/2 <= lPaddle.x+lPaddle.w && y >= lPaddle.y && y <= lPaddle.y+lPaddle.h) {
+   //if (x-w/2 <= lPaddle.x+lPaddle.w && y >= lPaddle.y && y <= lPaddle.y+lPaddle.h) {
+   //       ballXSpeed *= -1;
+   //       ballXSpeed += 1;
+   //     };
+   //     if (x+w/2 >= rPaddle.x+rPaddle.w && y >= rPaddle.y && y <= rPaddle.y+rPaddle.h) {
+   //       ballXSpeed *= -1;
+   //       ballXSpeed -= 1;
+   //};
+   
+};
+ void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){
+    if (x-w/2 <= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
           ballXSpeed *= -1;
           ballXSpeed += 1;
         };
-        if (x+w/2 >= rPaddle.x+rPaddle.w && y >= rPaddle.y && y <= rPaddle.y+rPaddle.h) {
+ };
+  void rBounce(float paddleX,float paddleY, float paddleW, float paddleH){
+        if (x+w/2 >= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
           ballXSpeed *= -1;
           ballXSpeed -= 1;
-   };
-   
-};
+ };
+ }
 };

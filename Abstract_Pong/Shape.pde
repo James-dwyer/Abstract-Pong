@@ -9,5 +9,9 @@ abstract class Shape{
    this.w = W;
    this.h = H;
   };
+  abstract void draw();
+  
+  abstract void lBounce(float x, float y, float w, float h);
+  abstract void rBounce(float x, float y, float w, float h);
   //methods
 };
