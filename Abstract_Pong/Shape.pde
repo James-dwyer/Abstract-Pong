@@ -13,5 +13,8 @@ abstract class Shape{
   
   abstract void lBounce(float x, float y, float w, float h);
   abstract void rBounce(float x, float y, float w, float h);
+  abstract void moveUP();
+  abstract void moveDown();
+  abstract  void moveStop();
   //methods
 };

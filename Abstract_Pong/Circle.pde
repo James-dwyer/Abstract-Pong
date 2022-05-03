@@ -48,4 +48,7 @@ class Circle extends Shape{
           ballXSpeed -= 1;
  };
  }
+ void moveUP(){};
+ void moveDown(){};
+ void moveStop(){};
 };

@@ -20,53 +20,64 @@ void setup(){
 void draw() {
   background(0);
   Shapes.get(2).lBounce(Shapes.get(0).x, Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
-  Shapes.get(2).lBounce(Shapes.get(1).x, Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+  Shapes.get(2).rBounce(Shapes.get(1).x, Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
   
   for(int i = 0; i < Shapes.size(); i++){
   Shapes.get(i).draw();
   };
-  //cHex.draw();
-  //lPaddle.draw();
-  //rPaddle.draw();
-  //lLine.draw();
-  //mLine.draw();
-  //rLine.draw();
+
 };//end draw
 
 
-//void keyPressed() {
-//  if (key == CODED) {
-//    if (keyCode == UP) {
-//      rPaddle.rPaddleSpeed = -6;
-//    };
-//    if (keyCode == DOWN) {
-//      rPaddle.rPaddleSpeed = 6;
-//    };
-//  };
-//  if (key == 'w' || key == 'W') {
-//    lPaddle.lPaddleSpeed = -6;
-//  };
-//  if (key == 's' || key == 'S') {
-//   lPaddle.lPaddleSpeed = 6;
-//  };
-//};//end keypressed
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+      rightPaddle.moveUP();
+      Shapes.set(1,rightPaddle);
+    };
+    if (keyCode == DOWN) {
+      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+      rightPaddle.moveDown();
+      Shapes.set(1,rightPaddle);
+    };
+  };
+  if (key == 'w' || key == 'W') {
+    Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
+      leftPaddle.moveUP();
+      Shapes.set(0,leftPaddle);
+  };
+  if (key == 's' || key == 'S') {
+   Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
+      leftPaddle.moveDown();
+      Shapes.set(0,leftPaddle);
+  };
+};//end keypressed
 
-//void keyReleased(){
-// if (key == CODED) {
-//    if (keyCode == UP) {
-//      rPaddle.rPaddleSpeed = 0;
-//    };
-//    if (keyCode == DOWN) {
-//      rPaddle.rPaddleSpeed = 0;
-//    };
-//  };
-//  if (key == 'w' || key == 'W') {
-//   lPaddle.lPaddleSpeed = 0;
-//  };
-//  if (key == 's' || key == 'S') {
-//    lPaddle.lPaddleSpeed = 0;
-//  };
-//};
+void keyReleased(){
+ if (key == CODED) {
+    if (keyCode == UP) {
+      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+      rightPaddle.moveStop();
+      Shapes.set(1,rightPaddle);
+    };
+    if (keyCode == DOWN) {
+        Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+      rightPaddle.moveStop();
+      Shapes.set(1,rightPaddle);
+    };
+  };
+  if (key == 'w' || key == 'W') {
+     Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
+      leftPaddle.moveStop();
+      Shapes.set(0,leftPaddle);
+  };
+  if (key == 's' || key == 'S') {
+     Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
+      leftPaddle.moveStop();
+      Shapes.set(0,leftPaddle);
+  };
+};
 
 void mousePressed() {
 };//end mouse pressed
