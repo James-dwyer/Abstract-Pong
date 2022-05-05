@@ -2,8 +2,8 @@ class Circle extends Shape{
   //gobal variables
   int ballXSpeed = 0, ballYSpeed = 0;
   //constructor
-  Circle(float x, float y, float w, float h){
-    super(x, y, w, h);
+  Circle(float x, float y, float w, float h,color c){
+    super(x, y, w, h,c);
     
     
     while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
@@ -11,9 +11,11 @@ class Circle extends Shape{
   };
   //methods
    void draw(){
+     fill(c);
   ellipse(x,y,w,h);
-  
+  if(instructions == false){
   move();
+  };
   bounce();
   }
   

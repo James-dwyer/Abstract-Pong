@@ -1,13 +1,15 @@
 abstract class Shape{
   //gobal variables
   float x,y,w,h;
+  color c;
   
   //constructor
-  Shape(float X, float Y, float W, float H){
+  Shape(float X, float Y, float W, float H,color Color){
    this.x = X;
    this.y = Y;
    this.w = W;
    this.h = H;
+   this.c = Color;
   };
   abstract void draw();
   

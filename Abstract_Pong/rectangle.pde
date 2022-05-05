@@ -4,16 +4,19 @@ class Rectangle extends Shape{
   boolean moveUP = false;
   boolean moveDown = false;
   //constructor
-  Rectangle(float x, float y, float w, float h){
-  super(x,y,w,h);
+  Rectangle(float x, float y, float w, float h,color c){
+  super(x,y,w,h,c);
   
   };
   //methods
   void draw(){
+    if(instructions == false){
     if(moveUP == true) y += -6;
     if(moveDown == true) y -= -6;
     if(y <= height*0){y = height*0;};
     if(y >= height - h){y = height - h;};
+    };
+     fill(c);
   rect(x,y,w,h);
   //move();
   };
