@@ -10,7 +10,7 @@ void Size(){
 fullScreen();
 };
 
-Shape pause = new Shape(width*0,height*0,height,height,#00F6FF){
+Shape pause = new Shape(width*7,height*2,height,height,#00F6FF){
   void lBounce(float x, float y, float w, float h){}
   void rBounce(float x, float y, float w, float h){}
   void moveUP(){};
@@ -49,7 +49,7 @@ void setup(){
 void draw() {
   background(0);
  
-  if(instructions == true) {Shapes.get(3).w = width/4;Shapes.get(3).h = height/2;Shapes.get(3).draw();}
+  if(instructions == true) {Shapes.get(3).w = width/4;Shapes.get(3).h = height/2;Shapes.get(3).x = width/2-(Shapes.get(3).w)/2;Shapes.get(3).y = height/3;Shapes.get(3).draw();}
   else if(instructions == false){
   Shapes.get(2).lBounce(Shapes.get(0).x, Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
   Shapes.get(2).rBounce(Shapes.get(1).x, Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
