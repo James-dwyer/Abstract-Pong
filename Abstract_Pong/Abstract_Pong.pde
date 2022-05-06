@@ -6,7 +6,7 @@ boolean instructions = false;
 color bColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 255)));
 color pColor = color(225,225,225,80);
 color res = 210,ex = 210,reset = 210;
-PFont pauseF;
+PFont pauseFont;
 Rectangle resume = new Rectangle(width/2,height/3,width/9,height/6,res);
 Rectangle restart = new Rectangle(width/2,height/3,width/9,height/6,reset);
 Rectangle exit = new Rectangle(width/2,height/3,width/9,height/6,ex);
@@ -22,11 +22,16 @@ Shape pause = new Shape(width*0,height*0,width,height,pColor){
   void moveDown(){};
   void moveStop(){};
   
+  String resString = "Resume",resetString = "Reset",exitString = "Exit";
+  
   
 
   void draw(){
    fill(res);
+
   resume.draw();
+  // remember to add to setup and change array values
+  text(resString,resume.x,resume.y,resume,w,resume,h);
   fill(reset);
   restart.draw();
   fill(ex);
@@ -44,7 +49,7 @@ void setup(){
   noStroke();
   smooth();
   frameRate(60);
-  
+  pauseFont = createFont("arial",30);
   Circle cHex = new Circle(width/2,height/2, width/75, width/75,bColor);
   Rectangle lPaddle = new Rectangle(width/50,height/2-(height/5)/2,width/85,height/5,#FF0000);
   Rectangle rPaddle = new Rectangle(width - (width/50),height/2-(height/5)/2,width/-85,height/5,#0000FF);
