@@ -18,5 +18,6 @@ abstract class Shape{
   abstract void moveUP();
   abstract void moveDown();
   abstract  void moveStop();
+  
   //methods
 };

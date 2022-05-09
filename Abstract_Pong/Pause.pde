@@ -1,21 +1,21 @@
 void pause(){
-Shapes.get(3).w = width*2/5;
-Shapes.get(3).h = height/4;
-Shapes.get(3).x = width/2-(Shapes.get(3).w)/2;
-Shapes.get(3).y = height/3;
+Shapes.get(pauseIndex).w = width*2/5;
+Shapes.get(pauseIndex).h = height/4;
+Shapes.get(pauseIndex).x = width/2-(Shapes.get(pauseIndex).w)/2;
+Shapes.get(pauseIndex).y = height/3;
 
 resume.x = width/3;
-resume.y = height/3+Shapes.get(3).h/6;
+resume.y = height/3+Shapes.get(pauseIndex).h/3;
 resume.w = width/12;
 resume.h = height/9;
 
 restart.x = width/2 - resume.w/2;
-restart.y = height/3+Shapes.get(3).h/6;
+restart.y = height/3+Shapes.get(pauseIndex).h/3;
 restart.w = width/12;
 restart.h = height/9;
 
 exit.x = width/2 + resume.w;
-exit.y = height/3+Shapes.get(3).h/6;
+exit.y = height/3+Shapes.get(pauseIndex).h/3;
 exit.w = width/12;
 exit.h = height/9;
 
@@ -27,6 +27,6 @@ restart.c = 80;}else restart.c = 210;
 if(mouseX >= exit.x && mouseX <= exit.x+exit.w && mouseY >= exit.y && mouseY <= exit.y+exit.h){
 exit.c = 80;}else exit.c = 210;
 
-Shapes.get(3).draw();
+Shapes.get(pauseIndex).draw();
 
 };

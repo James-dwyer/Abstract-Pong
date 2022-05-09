@@ -3,6 +3,8 @@ class Rectangle extends Shape{
   float lPaddleSpeed = 0, rPaddleSpeed = 0;
   boolean moveUP = false;
   boolean moveDown = false;
+  int lScore = 0;
+  int rScore = 0;
   //constructor
   Rectangle(float x, float y, float w, float h,color c){
   super(x,y,w,h,c);
@@ -18,7 +20,17 @@ class Rectangle extends Shape{
     };
      fill(c);
   rect(x,y,w,h);
+  fill(0);
+  textSize(40);
+  text(str(lScore),Shapes.get(3).x,Shapes.get(3).y,Shapes.get(3).w,Shapes.get(3).h);
+    text(str(rScore),Shapes.get(4).x,Shapes.get(4).y,Shapes.get(4).w,Shapes.get(4).h);
   //move();
+  };
+  
+  void rScore(){
+  if(rGoal == true){
+  
+  };
   };
   //void move(){
   //lPaddle.y += lPaddle.lPaddleSpeed;
@@ -34,4 +46,5 @@ class Rectangle extends Shape{
   void moveUP(){moveUP = true;moveDown = false; };
   void moveDown(){moveDown = true;moveUP = false;};
   void moveStop(){moveUP = false;moveDown=false;};
+
 };
