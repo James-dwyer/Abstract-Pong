@@ -22,15 +22,32 @@ class Rectangle extends Shape{
   rect(x,y,w,h);
   fill(0);
   textSize(40);
-  text(str(lScore),Shapes.get(3).x,Shapes.get(3).y,Shapes.get(3).w,Shapes.get(3).h);
-    text(str(rScore),Shapes.get(4).x,Shapes.get(4).y,Shapes.get(4).w,Shapes.get(4).h);
+  text(str(lScore),Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
+    text(str(rScore),Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
   //move();
+  sBScore();
   };
   
-  void rScore(){
-  if(rGoal == true){
+ void sBScore() {
+    if (Shapes.get(ballIndex).x-Shapes.get(ballIndex).w/2 < lLine.x)
+        {
+      rScore+=1;
+    };
+     if (Shapes.get(ballIndex).x+Shapes.get(ballIndex).w/2 > rLine.x) {
+     lScore+=1;
   
-  };
+        
+    };
+};
+;
+  void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){};
+  void rBounce(float paddleX,float paddleY, float paddleW, float paddleH){};
+  
+  void moveUP(){moveUP = true;moveDown = false; };
+  void moveDown(){moveDown = true;moveUP = false;};
+  void moveStop(){moveUP = false;moveDown=false;};
+;
+
   };
   //void move(){
   //lPaddle.y += lPaddle.lPaddleSpeed;
@@ -39,12 +56,4 @@ class Rectangle extends Shape{
   //if (lPaddle.y+h >= displayHeight)lPaddle.y = displayHeight-h;
   //  if (rPaddle.y <= displayHeight*0) rPaddle.y = displayHeight*0;
   //  if (rPaddle.y+h >= displayHeight)rPaddle.y = displayHeight-h;
-  //};
-  void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){};
-  void rBounce(float paddleX,float paddleY, float paddleW, float paddleH){};
-  
-  void moveUP(){moveUP = true;moveDown = false; };
-  void moveDown(){moveDown = true;moveUP = false;};
-  void moveStop(){moveUP = false;moveDown=false;};
-
-};
+  //}

@@ -7,6 +7,10 @@ color bColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 2
 color pColor = color(225,225,225,80);
 color res = 210,ex = 210,reset = 210;
 PFont pauseFont;
+boolean rGoal,lGoal;
+int ballIndex = 4;
+int lIndex = 2;
+int rIndex = 3;
 int pauseIndex = 5;
 Rectangle resume = new Rectangle(width/2,height/3,width/9,height/6,res);
 Rectangle restart = new Rectangle(width/2,height/3,width/9,height/6,reset);
@@ -31,11 +35,12 @@ void setup(){
   Rectangle rPaddle = new Rectangle(width - (width/50),height/2-(height/5)/2,width/-85,height/5,#0000FF);
   Rectangle lScoreboard = new Rectangle(width*1/4-(width/10)/2, height*0, width/10, height/8, 200);
   Rectangle rScoreboard = new Rectangle(width*3/4-(width/10)/2, height*0, width/10, height/8, 200);
+  Shapes.add(lScoreboard);
+  Shapes.add(rScoreboard);
   Shapes.add(lPaddle);
   Shapes.add(rPaddle);
   Shapes.add(cHex);
-  Shapes.add(lScoreboard);
-  Shapes.add(rScoreboard);
+
   Shapes.add(pause);
   
   
@@ -49,8 +54,8 @@ void draw() {
  
   if(instructions == true) {pause();}
   else if(instructions == false){
-  Shapes.get(2).lBounce(Shapes.get(0).x, Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
-  Shapes.get(2).rBounce(Shapes.get(1).x, Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
+  Shapes.get(ballIndex).lBounce(Shapes.get(lIndex).x, Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h);
+  Shapes.get(ballIndex).rBounce(Shapes.get(rIndex).x, Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h);
   
   mLine.draw();
  };
@@ -69,25 +74,25 @@ void draw() {
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h,Shapes.get(1).c);
+      Rectangle rightPaddle = new Rectangle(Shapes.get(rIndex).x,Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h,Shapes.get(rIndex).c);
       rightPaddle.moveUP();
-      Shapes.set(1,rightPaddle);
+      Shapes.set(rIndex,rightPaddle);
     };
     if (keyCode == DOWN) {
-      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h,Shapes.get(1).c);
+      Rectangle rightPaddle = new Rectangle(Shapes.get(rIndex).x,Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h,Shapes.get(rIndex).c);
       rightPaddle.moveDown();
-      Shapes.set(1,rightPaddle);
+      Shapes.set(rIndex,rightPaddle);
     };
   };
   if (key == 'w' || key == 'W') {
-    Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h,Shapes.get(0).c);
+    Rectangle leftPaddle = new Rectangle(Shapes.get(lIndex).x,Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h,Shapes.get(lIndex).c);
       leftPaddle.moveUP();
-      Shapes.set(0,leftPaddle);
+      Shapes.set(lIndex,leftPaddle);
   };
   if (key == 's' || key == 'S') {
-   Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h,Shapes.get(0).c);
+   Rectangle leftPaddle = new Rectangle(Shapes.get(lIndex).x,Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h,Shapes.get(lIndex).c);
       leftPaddle.moveDown();
-      Shapes.set(0,leftPaddle);
+      Shapes.set(lIndex,leftPaddle);
   };
    if(instructions == true){
   if(key == 'i' || key == 'I') instructions = false;
@@ -97,25 +102,25 @@ void keyPressed() {
 void keyReleased(){
  if (key == CODED) {
     if (keyCode == UP) {
-      Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h,Shapes.get(1).c);
+      Rectangle rightPaddle = new Rectangle(Shapes.get(rIndex).x,Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h,Shapes.get(rIndex).c);
       rightPaddle.moveStop();
-      Shapes.set(1,rightPaddle);
+      Shapes.set(rIndex,rightPaddle);
     };
     if (keyCode == DOWN) {
-        Rectangle rightPaddle = new Rectangle(Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h,Shapes.get(1).c);
+        Rectangle rightPaddle = new Rectangle(Shapes.get(rIndex).x,Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h,Shapes.get(rIndex).c);
       rightPaddle.moveStop();
-      Shapes.set(1,rightPaddle);
+      Shapes.set(rIndex,rightPaddle);
     };
   };
   if (key == 'w' || key == 'W') {
-     Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h,Shapes.get(0).c);
+     Rectangle leftPaddle = new Rectangle(Shapes.get(lIndex).x,Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h,Shapes.get(lIndex).c);
       leftPaddle.moveStop();
-      Shapes.set(0,leftPaddle);
+      Shapes.set(lIndex,leftPaddle);
   };
   if (key == 's' || key == 'S') {
-     Rectangle leftPaddle = new Rectangle(Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h,Shapes.get(0).c);
+     Rectangle leftPaddle = new Rectangle(Shapes.get(lIndex).x,Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h,Shapes.get(lIndex).c);
       leftPaddle.moveStop();
-      Shapes.set(0,leftPaddle);
+      Shapes.set(lIndex,leftPaddle);
   };
  
 };
