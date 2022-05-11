@@ -34,7 +34,8 @@ class Circle extends Shape{
       ballXSpeed = int(random(-5,5));
        while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
        while (ballXSpeed == 0)ballXSpeed = int(random(-5,5));
-        
+        rScore+= 1;
+   
       
     };
      if (x+w/2 > rLine.x) {
@@ -46,8 +47,15 @@ class Circle extends Shape{
        ballXSpeed = int(random(-5,5));
        while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
        while (ballXSpeed == 0)ballXSpeed = int(random(-5,5));
-       rGoal = false;
+     lScore+= 1;
+    
         
+    };
+    if(rScore == 3){
+    rWin = true;
+    };
+    if(lScore == 3){
+    lWin = true;
     };
 };
   void move(){

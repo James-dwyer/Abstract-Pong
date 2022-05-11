@@ -7,7 +7,9 @@ color bColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 2
 color pColor = color(225,225,225,80);
 color res = 210,ex = 210,reset = 210;
 PFont pauseFont;
-boolean rGoal,lGoal;
+boolean rGoal,lGoal,rWin = false,lWin = false;
+ int lScore = 0;
+  int rScore = 0;
 int ballIndex = 4;
 int lIndex = 2;
 int rIndex = 3;
@@ -50,22 +52,8 @@ void setup(){
 };//end setup
 
 void draw() {
-  background(0);
- 
-  if(instructions == true) {pause();}
-  else if(instructions == false){
-  Shapes.get(ballIndex).lBounce(Shapes.get(lIndex).x, Shapes.get(lIndex).y,Shapes.get(lIndex).w,Shapes.get(lIndex).h);
-  Shapes.get(ballIndex).rBounce(Shapes.get(rIndex).x, Shapes.get(rIndex).y,Shapes.get(rIndex).w,Shapes.get(rIndex).h);
   
-  mLine.draw();
- };
-  lLine.draw();
-  
-  rLine.draw();
-  
-  for(int i = 0; i < Shapes.size()-1; i++){
-  Shapes.get(i).draw();
-  };
+  gameStart();
    
 
 };//end draw
@@ -126,6 +114,17 @@ void keyReleased(){
 };
 
 void mousePressed() {
+  if(instructions == true){
+  if(mouseX >= resume.x && mouseX <= resume.x + resume.w && mouseY >= resume.y && mouseY <= resume.y+resume.h){
+    instructions = false;
+  };
+  if(mouseX >= restart.x && mouseX <= restart.x+restart.w && mouseY >= restart.y && mouseY <= restart.y+restart.h){
+  gameStart();
+  };
+  if(mouseX >= exit.x && mouseX <= exit.x+exit.w && mouseY >= exit.y && mouseY <= exit.y+exit.h){
+  exit();
+  };
+  };
 };//end mouse pressed
 
 //end Main (driver) Program)
