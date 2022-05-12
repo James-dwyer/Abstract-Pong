@@ -1,5 +1,5 @@
 void gameStart(){
-  if(lWin == false && rWin == false){
+  
 background(0);
  
   if(instructions == true) {pause();}
@@ -16,5 +16,5 @@ background(0);
   for(int i = 0; i < Shapes.size()-1; i++){
   Shapes.get(i).draw();
   };
-  };
+  
 };

@@ -26,7 +26,7 @@ class Rectangle extends Shape{
     text(str(rScore),Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
    sBScore(); 
   //move();
- 
+   
   };
   
  void sBScore() {

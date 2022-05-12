@@ -37,23 +37,30 @@ void setup(){
   Rectangle rPaddle = new Rectangle(width - (width/50),height/2-(height/5)/2,width/-85,height/5,#0000FF);
   Rectangle lScoreboard = new Rectangle(width*1/4-(width/10)/2, height*0, width/10, height/8, 200);
   Rectangle rScoreboard = new Rectangle(width*3/4-(width/10)/2, height*0, width/10, height/8, 200);
+  Rectangle win = new Rectangle(width/2-((width/2)/3), height/4, width/3, height/10,215);
+  Rectangle quit = new Rectangle(width*3/4-width/5, height/2, width/5, height/15,215);
+  Rectangle pAgain = new Rectangle(width/4, height/2, width/5, height/15,215);
   Shapes.add(lScoreboard);
   Shapes.add(rScoreboard);
   Shapes.add(lPaddle);
   Shapes.add(rPaddle);
   Shapes.add(cHex);
-
+  if(lWin == true || rWin == true){
+  Shapes.add(win);
+  Shapes.add(quit);
+  Shapes.add(pAgain);
+  };
   Shapes.add(pause);
-  
-  
   lLine = new Line(width/50,height*0,width/50,height);
   mLine = new Line(width/2,height*0,width/2,height);
   rLine = new Line(width - (width/50),height*0,width - (width/50),height);
 };//end setup
 
 void draw() {
-  
-  gameStart();
+  if(lWin == false && rWin == false){
+    gameStart();
+  }else{winScreen();};
+
    
 
 };//end draw
