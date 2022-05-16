@@ -12,7 +12,7 @@ abstract class Shape{
    this.c = Color;
   };
   abstract void draw();
-  
+  abstract void starDraw();
   abstract void lBounce(float x, float y, float w, float h);
   abstract void rBounce(float x, float y, float w, float h);
   abstract void moveUP();

@@ -54,6 +54,7 @@ class Rectangle extends Shape{
   void moveUP(){moveUP = true;moveDown = false; };
   void moveDown(){moveDown = true;moveUP = false;};
   void moveStop(){moveUP = false;moveDown=false;};
+  void starDraw(){};
 ;
 
   };

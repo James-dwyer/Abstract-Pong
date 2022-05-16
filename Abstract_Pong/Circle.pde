@@ -1,6 +1,6 @@
 class Circle extends Shape{
   //gobal variables
-  int ballXSpeed = 20, ballYSpeed = 0;
+  int ballXSpeed = 0, ballYSpeed = 0;
   
   //constructor
   Circle(float x, float y, float w, float h,color c){
@@ -10,7 +10,7 @@ class Circle extends Shape{
     while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
   };
-  Circle(float X, float Y, float W,float H,color C,float num){
+  Circle(float X, float Y, float W,float H,color C,color c){
     super(X,Y,W,H,C);
     
     
@@ -23,6 +23,7 @@ class Circle extends Shape{
   if(instructions == false){
       move();
   }; 
+  
  
   if(rBool == true){
     ballYSpeed = int(random(-5,5));
@@ -37,6 +38,12 @@ class Circle extends Shape{
 
 
   }
+  void starDraw(){
+  fill(90);
+    ellipse(X, Y, w, h);
+    
+    //ballBounce();
+  };
    void score() {
     if (x-w/2 < lLine.x){
    
@@ -119,5 +126,6 @@ class Circle extends Shape{
  void moveUP(){};
  void moveDown(){};
  void moveStop(){};
+ 
 
 };

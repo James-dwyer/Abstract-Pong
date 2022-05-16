@@ -4,6 +4,7 @@ Shape pause = new Shape(width*0,height*0,width,height,pColor){
   void moveUP(){};
   void moveDown(){};
   void moveStop(){};
+  void starDraw(){};
 
   
   String resString = "Resume",resetString = "Reset",exitString = "Exit";
