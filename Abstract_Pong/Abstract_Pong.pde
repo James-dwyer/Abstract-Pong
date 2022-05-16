@@ -136,8 +136,11 @@ void mousePressed() {
   };
   };
   if(lWin == true || rWin == true){
-  if(mouseX >= Shapes.get(6).x && mouseX <= Shapes.get(6).x + Shapes.get(6).w && mouseY >= Shapes.get(6).y && mouseY <= Shapes.get(6).y-Shapes.get(6).h){
+  if(mouseX >= Shapes.get(6).x && mouseX <= Shapes.get(6).x + Shapes.get(6).w && mouseY >= Shapes.get(6).y && mouseY <= Shapes.get(6).y+Shapes.get(6).h){
     exit();
+  };
+  if(mouseX >= Shapes.get(7).x && mouseX <= Shapes.get(7).x + Shapes.get(7).w && mouseY >= Shapes.get(7).y && mouseY <= Shapes.get(7).y+Shapes.get(7).h){
+  reset();
   };
   };
 };//end mouse pressed
