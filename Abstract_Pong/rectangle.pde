@@ -25,6 +25,16 @@ class Rectangle extends Shape{
   text(str(lScore),Shapes.get(0).x,Shapes.get(0).y,Shapes.get(0).w,Shapes.get(0).h);
     text(str(rScore),Shapes.get(1).x,Shapes.get(1).y,Shapes.get(1).w,Shapes.get(1).h);
    sBScore(); 
+   if(lWin == true || rWin == true){
+     fill(255);
+     if(lWin == true){
+     text("Left Player Wins",Shapes.get(5).x,Shapes.get(5).y, Shapes.get(5).w,Shapes.get(5).h);
+     }else if (rWin == true){
+      text("Right Player Wins",Shapes.get(5).x,Shapes.get(5).y, Shapes.get(5).w,Shapes.get(5).h);
+     };
+     text("Play Again!",Shapes.get(7).x,Shapes.get(7).y, Shapes.get(7).w,Shapes.get(7).h);
+     text("Quit!",Shapes.get(6).x,Shapes.get(6).y, Shapes.get(6).w,Shapes.get(6).h);
+   };
   //move();
    
   };

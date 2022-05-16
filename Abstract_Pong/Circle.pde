@@ -16,6 +16,14 @@ class Circle extends Shape{
   ellipse(x,y,w,h);
   if(instructions == false){
       move();
+  }; 
+ 
+  if(rBool == true){
+    ballYSpeed = int(random(-5,5));
+      ballXSpeed = int(random(-5,5));
+       while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
+       while (ballXSpeed == 0)ballXSpeed = int(random(-5,5));
+       rBool = false;
   };
   bounce();
   score();
