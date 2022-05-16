@@ -1,6 +1,6 @@
 class Circle extends Shape{
   //gobal variables
-  int ballXSpeed = 0, ballYSpeed = 0;
+  int ballXSpeed = 20, ballYSpeed = 0;
   
   //constructor
   Circle(float x, float y, float w, float h,color c){
@@ -10,6 +10,12 @@ class Circle extends Shape{
     while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
   };
+  Circle(float X, float Y, float W,float H,color C,float num){
+    super(X,Y,W,H,C);
+    
+    
+  };
+  
   //methods
    void draw(){
      fill(c);
@@ -25,6 +31,7 @@ class Circle extends Shape{
        while (ballXSpeed == 0)ballXSpeed = int(random(-5,5));
        rBool = false;
   };
+  println(ballXSpeed);
   bounce();
   score();
 
@@ -32,9 +39,11 @@ class Circle extends Shape{
   }
    void score() {
     if (x-w/2 < lLine.x){
-
+   
+      
      Shapes.get(lIndex).y = height/2-Shapes.get(lIndex).h/2;
       Shapes.get(rIndex).y = height/2-Shapes.get(rIndex).h/2;
+      
       x = width/2;
       y = width/2;
       
@@ -71,25 +80,42 @@ class Circle extends Shape{
   y += ballYSpeed;
   };
   void bounce(){
+        
+      
    if (y-h/2 <= height*0 || y+h/2 >= height) {
       ballYSpeed = ballYSpeed*-1;
     }
     if (x+w/2 >= width || x-w/2  <= width*0) ballXSpeed *= -1;  
-   
+      
 };
+  
 
  void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){
     if (x-w/2 <= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
           ballXSpeed *= -1;
           ballXSpeed += 1;
         };
+         if(ballXSpeed >= 19){
+     if (x-w/2 <= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
+        ballXSpeed *= -1;
+        ballXSpeed = 19;
+        ballYSpeed = int(random(-6, 6));
+        };
+   };
  };
   void rBounce(float paddleX,float paddleY, float paddleW, float paddleH){
         if (x+w/2 >= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
           ballXSpeed *= -1;
           ballXSpeed -= 1;
  };
- }
+   if(ballXSpeed <= -19){
+    if (x+w/2 >= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
+          ballXSpeed *= -1;
+        ballXSpeed = -19;
+        ballYSpeed = int(random(-6, 6));
+ };
+   };
+ };
  void moveUP(){};
  void moveDown(){};
  void moveStop(){};

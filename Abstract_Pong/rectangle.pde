@@ -40,7 +40,12 @@ class Rectangle extends Shape{
   };
   
  void sBScore() {
-   
+   if(lScore == 0){Shapes.get(lIndex).h = height/5; };
+   if(lScore == 1){Shapes.get(lIndex).h = height/8; };
+   if(lScore == 2){Shapes.get(lIndex).h = height/10; };
+   if(rScore == 0){Shapes.get(rIndex).h = height/5; };
+   if(rScore == 1){Shapes.get(rIndex).h = height/8; };
+   if(rScore == 2){Shapes.get(rIndex).h = height/10; };
 };
 ;
   void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){};
