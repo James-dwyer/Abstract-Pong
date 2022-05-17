@@ -10,8 +10,8 @@ class Circle extends Shape{
     while (ballXSpeed == 0)ballXSpeed = int(random(-7,7));
     while (ballYSpeed == 0)ballYSpeed = int(random(-5, 5));
   };
-  Circle(float X, float Y, float W,float H,color C,color c){
-    super(X,Y,W,H,C);
+  Circle(float X, float Y, float Width,float H,color C,color c){
+    super(X,Y,Width,H,C);
     
     
   };
@@ -95,7 +95,11 @@ class Circle extends Shape{
     if (x+w/2 >= width || x-w/2  <= width*0) ballXSpeed *= -1;  
       
 };
-  
+  void sBounce(){
+   if (dist(Shapes.get(ballIndex).x, (Shapes.get(ballIndex).y), X, Y) <= w + h) {
+      ballXSpeed *= -1;
+  };
+  };
 
  void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){
     if (x-w/2 <= paddleX+paddleW && y >= paddleY && y <= paddleY+paddleH) {
