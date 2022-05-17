@@ -4,7 +4,7 @@ void starSetup() {
     for (int i = 0; i < Star.length; i++) {
 
       float diameter = random(width/70, width/15);
-      float randX = width/2;
+      float randX = random(width);
       float randY = random(0+diameter/2, height-diameter/2);
       Star[i] = new Circle(randX, randY, diameter/2,diameter/2,210,210);
       int j = i;

@@ -13,7 +13,7 @@ boolean rGoal,lGoal,rWin = false,lWin = false,rBool = false,redo = false;
 int ballIndex = 4;
 int lIndex = 2;
 int rIndex = 3;
-int pauseIndex = 8;
+int pauseIndex = 13;
 Rectangle resume = new Rectangle(width/2,height/3,width/9,height/6,res);
 Rectangle restart = new Rectangle(width/2,height/3,width/9,height/6,reset);
 Rectangle exit = new Rectangle(width/2,height/3,width/9,height/6,ex);
@@ -51,12 +51,16 @@ void setup(){
   Shapes.add(lPaddle);
   Shapes.add(rPaddle);
   Shapes.add(cHex);
+  for (int i = 0; i < Star.length; i++) {
+     Shapes.add(Star[i]);
+    };
+  
   
   Shapes.add(win);
   Shapes.add(quit);
   Shapes.add(pAgain);
   
-      Shapes.add(Star[4]);
+      
     
   Shapes.add(pause);
 
@@ -64,7 +68,9 @@ void setup(){
 
 void draw() {
   if(lWin == false && rWin == false){
+    println(Shapes.size());
     gameStart();
+    
   }else{winScreen();};
 
    
