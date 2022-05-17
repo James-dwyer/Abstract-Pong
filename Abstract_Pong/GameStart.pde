@@ -13,8 +13,10 @@ background(0);
   
   rLine.draw();
   
-  for(int i = 0; i < Shapes.size()-4; i++){
+  for(int i = 0; i < Shapes.size()-5; i++){
   Shapes.get(i).draw();
   };
-  
+for (int i = 0; i < Star.length; i++) {
+     Shapes.get(8).starDraw();
+    };
 };

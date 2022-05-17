@@ -24,7 +24,7 @@ class Circle extends Shape{
       move();
   }; 
   
- 
+   
   if(rBool == true){
     ballYSpeed = int(random(-5,5));
       ballXSpeed = int(random(-5,5));
@@ -40,7 +40,7 @@ class Circle extends Shape{
   }
   void starDraw(){
   fill(90);
-    ellipse(X, Y, w, h);
+    ellipse(X, Y, w,h);
     
     //ballBounce();
   };
