@@ -1,6 +1,6 @@
 //global variables
 Line lLine,rLine,mLine;
-
+//ADD RULES SCREEN WITH SCREEN SAVER
 ArrayList<Shape> Shapes = new ArrayList<Shape>();
 boolean instructions = false;
 color bColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 255)));
