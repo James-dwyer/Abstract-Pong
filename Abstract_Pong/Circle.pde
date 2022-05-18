@@ -96,7 +96,7 @@ class Circle extends Shape{
       
 };
   void sBounce(){
-    for(int i = 5; i < Shapes.size() - 13;i++){
+    for(int i = 5; i < Shapes.size() - 14;i++){
    if (dist(Shapes.get(ballIndex).x, (Shapes.get(ballIndex).y), Shapes.get(i).x, Shapes.get(i).y) <= Shapes.get(i).w/2 + Shapes.get(i).h/2) {
       ballXSpeed *= -1;
   };
