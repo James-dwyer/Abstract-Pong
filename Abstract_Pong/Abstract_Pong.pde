@@ -13,7 +13,10 @@ boolean rGoal,lGoal,rWin = false,lWin = false,rBool = false,redo = false;
 int ballIndex = 4;
 int lIndex = 2;
 int rIndex = 3;
-int pauseIndex = 13;
+int resetIndex = 12;
+int qIndex = 11;
+int wIndex = 10;
+int pauseIndex = 23;
 Rectangle resume = new Rectangle(width/2,height/3,width/9,height/6,res);
 Rectangle restart = new Rectangle(width/2,height/3,width/9,height/6,reset);
 Rectangle exit = new Rectangle(width/2,height/3,width/9,height/6,ex);
@@ -33,7 +36,17 @@ void setup(){
   pauseFont = createFont("arial",60);
   textAlign(CENTER,CENTER); 
   Circle cHex = new Circle(width/2,height/2, width/75, width/75,bColor);
- 
+  Rectangle  lRule = new Rectangle(width/10, height*3/10, width/4, width/20, #FF00FF);
+  Rectangle lRule1 = new Rectangle(width/10, height*4/10, width/4, width/20, #0000FF);
+  Rectangle lRule2 = new Rectangle(width/10, height*5/10, width/4, width/20, #FF7000);
+  Rectangle lRule3 = new Rectangle(width/10, height*6/10, width/4, width/20,  #FF0000);
+  
+  Rectangle rRule = new Rectangle(width-lRule.x-lRule.w, height*3/10, width/4, width/20,  #FF00FF);
+  Rectangle rRule1 = new Rectangle(width-lRule.x-lRule.w, height*4/10, width/4, width/20,  #0000FF);
+  Rectangle rRule2 = new Rectangle(width-lRule.x-lRule.w, height*5/10, width/4, width/20,  #FF7000);
+ Rectangle  rRule3 = new Rectangle(width-lRule.x-lRule.w, height*6/10, width/4, width/20, #FF0000);
+  Rectangle rules  = new Rectangle(width/5, height/15, width*3/5, height*2/15, #FF00FF);
+  Rectangle start = new Rectangle(width*3/10, height*5/7, width*2/5, height/8,  #FF00FF);
   Rectangle lPaddle = new Rectangle(width/50,height/2-(height/5)/2,width/85,height/5,#FF0000);
   Rectangle rPaddle = new Rectangle(width - (width/50),height/2-(height/5)/2,width/-85,height/5,#0000FF);
   Rectangle lScoreboard = new Rectangle(width*1/4-(width/10)/2, height*0, width/10, height/8, 200);
@@ -60,15 +73,23 @@ void setup(){
   Shapes.add(quit);
   Shapes.add(pAgain);
   
-      
-    
+  Shapes.add(lRule);
+  Shapes.add(lRule1);
+  Shapes.add(lRule2);
+  Shapes.add(lRule3);
+  Shapes.add(rRule);
+  Shapes.add(rRule1);
+  Shapes.add(rRule2);
+  Shapes.add(rRule3);
+  Shapes.add(rules);
+  Shapes.add(start);
   Shapes.add(pause);
 
 };//end setup
 
 void draw() {
   if(lWin == false && rWin == false){
-    println(Shapes.size());
+    
     gameStart();
     
   }else{winScreen();};
@@ -151,10 +172,10 @@ void mousePressed() {
   Circle cHex = new Circle(width/2,height/2, width/75, width/75,bColor);
   Shapes.add(ballIndex,cHex);}
   if(lWin == true || rWin == true){
-  if(mouseX >= Shapes.get(6).x && mouseX <= Shapes.get(6).x + Shapes.get(6).w && mouseY >= Shapes.get(6).y && mouseY <= Shapes.get(6).y+Shapes.get(6).h){
+  if(mouseX >= Shapes.get(qIndex).x && mouseX <= Shapes.get(qIndex).x + Shapes.get(qIndex).w && mouseY >= Shapes.get(qIndex).y && mouseY <= Shapes.get(qIndex).y+Shapes.get(qIndex).h){
     exit();
   };
-  if(mouseX >= Shapes.get(7).x && mouseX <= Shapes.get(7).x + Shapes.get(7).w && mouseY >= Shapes.get(7).y && mouseY <= Shapes.get(7).y+Shapes.get(7).h){
+  if(mouseX >= Shapes.get(resetIndex).x && mouseX <= Shapes.get(resetIndex).x + Shapes.get(resetIndex).w && mouseY >= Shapes.get(resetIndex).y && mouseY <= Shapes.get(resetIndex).y+Shapes.get(resetIndex).h){
   reset();
   };
   };

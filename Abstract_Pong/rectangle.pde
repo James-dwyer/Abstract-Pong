@@ -28,12 +28,12 @@ class Rectangle extends Shape{
    if(lWin == true || rWin == true){
      fill(255);
      if(lWin == true){
-     text("Left Player Wins",Shapes.get(5).x,Shapes.get(5).y, Shapes.get(5).w,Shapes.get(5).h);
+     text("Left Player Wins",Shapes.get(wIndex).x,Shapes.get(wIndex).y, Shapes.get(wIndex).w,Shapes.get(wIndex).h);
      }else if (rWin == true){
-      text("Right Player Wins",Shapes.get(5).x,Shapes.get(5).y, Shapes.get(5).w,Shapes.get(5).h);
+      text("Right Player Wins",Shapes.get(wIndex).x,Shapes.get(wIndex).y, Shapes.get(wIndex).w,Shapes.get(wIndex).h);
      };
-     text("Play Again!",Shapes.get(7).x,Shapes.get(7).y, Shapes.get(7).w,Shapes.get(7).h);
-     text("Quit!",Shapes.get(6).x,Shapes.get(6).y, Shapes.get(6).w,Shapes.get(6).h);
+     text("Play Again!",Shapes.get(resetIndex).x,Shapes.get(resetIndex).y, Shapes.get(resetIndex).w,Shapes.get(resetIndex).h);
+     text("Quit!",Shapes.get(qIndex).x,Shapes.get(qIndex).y, Shapes.get(qIndex).w,Shapes.get(qIndex).h);
    };
   //move();
    

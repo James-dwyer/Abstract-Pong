@@ -13,7 +13,7 @@ background(0);
   
   rLine.draw();
   
-  for(int i = 0; i < Shapes.size()-5; i++){
+  for(int i = 0; i < Shapes.size()-14; i++){
   Shapes.get(i).draw();
   };
 //for (int i = 8; i < Shapes.; i++) {

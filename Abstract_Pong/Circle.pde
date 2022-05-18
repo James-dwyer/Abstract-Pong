@@ -32,10 +32,10 @@ class Circle extends Shape{
        while (ballXSpeed == 0)ballXSpeed = int(random(-5,5));
        rBool = false;
   };
-  println(ballXSpeed);
+  //println(ballXSpeed);
   bounce();
   score();
-
+  sBounce();
 
   }
   void starDraw(){
@@ -96,9 +96,11 @@ class Circle extends Shape{
       
 };
   void sBounce(){
-   if (dist(Shapes.get(ballIndex).x, (Shapes.get(ballIndex).y), X, Y) <= w + h) {
+    for(int i = 5; i < Shapes.size() - 13;i++){
+   if (dist(Shapes.get(ballIndex).x, (Shapes.get(ballIndex).y), Shapes.get(i).x, Shapes.get(i).y) <= Shapes.get(i).w/2 + Shapes.get(i).h/2) {
       ballXSpeed *= -1;
   };
+    };
   };
 
  void lBounce(float paddleX, float paddleY, float paddleW, float paddleH){
