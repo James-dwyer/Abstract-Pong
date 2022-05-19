@@ -9,7 +9,7 @@ color res = 210, ex = 210, reset = 210;
 PFont pauseFont;
 boolean rGoal, lGoal, rWin = false, lWin = false, rBool = false, redo = false;
 boolean rules = true, lRules = false, rRules = false;
-boolean lSlow,lReg,lFast,rSlow,rReg,rFast;
+boolean lSlow = false,lReg = false,lFast = false,rSlow = false,rReg = false,rFast = false;
 int lScore = 0;
 int rScore = 0;
 int lPaddleSpeed = 0;

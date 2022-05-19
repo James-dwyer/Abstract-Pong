@@ -55,7 +55,27 @@ class Rectangle extends Shape {
     };
     //move();
   };
-
+  void pSpeed(){
+  if(lSlow == true){
+  lPaddleSpeed = -3;
+  };
+  if(lReg == true){
+  lPaddleSpeed = -6;
+  };
+  if(lFast == true){
+  lPaddleSpeed = -10;
+  };
+  if(rSlow == true){
+  lPaddleSpeed = -3;
+  };
+  if(rReg == true){
+  lPaddleSpeed = -6;
+  };
+  if(rFast == true){
+  lPaddleSpeed = -10;
+  };
+  
+  };
   void sBScore() {
     if (lScore == 0) {
       Shapes.get(lIndex).h = height/5;
