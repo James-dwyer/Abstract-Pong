@@ -9,8 +9,11 @@ color res = 210, ex = 210, reset = 210;
 PFont pauseFont;
 boolean rGoal, lGoal, rWin = false, lWin = false, rBool = false, redo = false;
 boolean rules = true, lRules = false, rRules = false;
+boolean lSlow,lReg,lFast,rSlow,rReg,rFast;
 int lScore = 0;
 int rScore = 0;
+int lPaddleSpeed = 0;
+int rPaddleSpeed = 0;
 int ballIndex = 4;
 int lIndex = 2;
 int rIndex = 3;
@@ -185,6 +188,13 @@ void mousePressed() {
     if (mouseX >= Shapes.get(resetIndex).x && mouseX <= Shapes.get(resetIndex).x + Shapes.get(resetIndex).w && mouseY >= Shapes.get(resetIndex).y && mouseY <= Shapes.get(resetIndex).y+Shapes.get(resetIndex).h) {
       reset();
     };
+   if(rules == true){
+   if (mouseX >= Shapes.get(14).x && mouseX <= Shapes.get(14).x + Shapes.get(14).w && mouseY >= Shapes.get(14).y && mouseY <= Shapes.get(14).y+Shapes.get(14).h){
+     Shapes.get(lIndex).lPaddleSpeed = 5;
+   };
+   
+   };
+    
   };
 };//end mouse pressed
 

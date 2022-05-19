@@ -50,8 +50,8 @@ class Rectangle extends Shape {
     text("Slow",Shapes.get(18).x,Shapes.get(18).y,Shapes.get(18).w,Shapes.get(18).h);
     text("Regular",Shapes.get(19).x,Shapes.get(19).y,Shapes.get(19).w,Shapes.get(19).h);
     text("Fast",Shapes.get(20).x,Shapes.get(20).y,Shapes.get(20).w,Shapes.get(20).h);
-    text
-    
+    text("Score 3 Goals To Win The Game!",Shapes.get(21).x,Shapes.get(21).y,Shapes.get(21).w,Shapes.get(21).h);
+    text("Click Here to Play! Press i at Anytime to Pause!",Shapes.get(22).x,Shapes.get(22).y,Shapes.get(22).w,Shapes.get(22).h);
     };
     //move();
   };
