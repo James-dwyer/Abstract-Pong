@@ -6,7 +6,7 @@ void starSetup() {
       float diameter = random(width/70, width/15);
       float randX = random(width);
       float randY = random(0+diameter/2, height-diameter/2);
-      Star[i] = new Circle(randX, randY, diameter/2,diameter/2,210,210);
+      Star[i] = new Circle(randX, randY, diameter/2, diameter/2, 210, 210);
       int j = i;
       while (j >= i) {
         if (randX+diameter/2 <= Star[i].x+Star[i].x && randX-diameter/2 > Star[i].x-Star[i].w/2) {
@@ -18,7 +18,7 @@ void starSetup() {
         j--;
       };
 
-      Star[i] = new Circle(randX, randY, diameter/2,diameter/2,210,210);
+      Star[i] = new Circle(randX, randY, diameter/2, diameter/2, 210, 210);
       while (j >= i) {
         if (randY+diameter/2 <= Star[i].y+Star[i].h/2 && randY-diameter/2 >= Star[i].y-Star[i].h/2) {
           randY = random(0+diameter/2, height-diameter/2);
@@ -29,7 +29,7 @@ void starSetup() {
         ;
         j--;
       };
-      Star[i] = new Circle(randX, randY, diameter/2,diameter/2,210,210);
+      Star[i] = new Circle(randX, randY, diameter/2, diameter/2, 210, 210);
     };
     redo = true;
   };

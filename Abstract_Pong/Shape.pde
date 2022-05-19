@@ -1,15 +1,15 @@
-abstract class Shape{
+abstract class Shape {
   //gobal variables
-  float x,y,w,h;
+  float x, y, w, h;
   color c;
-  
+
   //constructor
-  Shape(float X, float Y, float W, float H,color Color){
-   this.x = X;
-   this.y = Y;
-   this.w = W;
-   this.h = H;
-   this.c = Color;
+  Shape(float X, float Y, float W, float H, color Color) {
+    this.x = X;
+    this.y = Y;
+    this.w = W;
+    this.h = H;
+    this.c = Color;
   };
   abstract void draw();
   abstract void starDraw();
@@ -18,6 +18,6 @@ abstract class Shape{
   abstract void moveUP();
   abstract void moveDown();
   abstract  void moveStop();
-  
+
   //methods
 };
