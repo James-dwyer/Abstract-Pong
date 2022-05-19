@@ -1,6 +1,6 @@
 class Rectangle extends Shape {
   //gobal variables
-  float lPaddleSpeed = 0, rPaddleSpeed = 0;
+  float lPaddleSpeed = -3, rPaddleSpeed = -7;
   boolean moveUP = false;
   boolean moveDown = false;
 
@@ -11,8 +11,12 @@ class Rectangle extends Shape {
   //methods
   void draw() {
     if (instructions == false) {
-      if (moveUP == true) y += -6;
-      if (moveDown == true) y -= -6;
+      
+      if (moveUP == true) Shapes.get(lIndex).y += lPaddleSpeed;
+      if (moveDown == true) Shapes.get(lIndex).y -= lPaddleSpeed;
+      
+      if (moveUP == true) Shapes.get(rIndex).y += rPaddleSpeed;
+      if (moveDown == true) Shapes.get(rIndex).y -= rPaddleSpeed;
       if (y <= height*0) {
         y = height*0;
       };

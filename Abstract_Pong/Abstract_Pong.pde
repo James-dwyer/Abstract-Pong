@@ -187,15 +187,19 @@ void mousePressed() {
     };
     if (mouseX >= Shapes.get(resetIndex).x && mouseX <= Shapes.get(resetIndex).x + Shapes.get(resetIndex).w && mouseY >= Shapes.get(resetIndex).y && mouseY <= Shapes.get(resetIndex).y+Shapes.get(resetIndex).h) {
       reset();
-    };
-   if(rules == true){
-   if (mouseX >= Shapes.get(14).x && mouseX <= Shapes.get(14).x + Shapes.get(14).w && mouseY >= Shapes.get(14).y && mouseY <= Shapes.get(14).y+Shapes.get(14).h){
-     Shapes.get(lIndex).lPaddleSpeed = 5;
+    };  
+  };
+    if(rules == true){
+   //if (mouse){};
+      
+      
+   if (mouseX >= Shapes.get(22).x && mouseX <= Shapes.get(22).x + Shapes.get(22).w && mouseY >= Shapes.get(22).y && mouseY <= Shapes.get(22).y+Shapes.get(22).h){
+     rules = false; 
+     lRules = true;
+     rRules = true;
    };
    
    };
-    
-  };
 };//end mouse pressed
 
 //end Main (driver) Program)
