@@ -1,6 +1,6 @@
 class Rectangle extends Shape {
   //gobal variables
-  float lPaddleSpeed = -5, rPaddleSpeed = -7;
+  
   boolean moveUP = false;
   boolean moveDown = false;
 
