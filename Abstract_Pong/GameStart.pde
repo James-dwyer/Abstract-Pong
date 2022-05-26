@@ -14,7 +14,7 @@ void gameStart() {
 
   rLine.draw();
 
-  for (int i = 0; i < Shapes.size()-11; i++) {
+  for (int i = 0; i < Shapes.size()-12; i++) {
     Shapes.get(i).draw();
   };
   //for (int i = 8; i < Shapes.; i++) {

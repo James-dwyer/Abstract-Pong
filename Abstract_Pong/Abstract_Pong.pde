@@ -20,7 +20,7 @@ int rIndex = 3;
 int resetIndex = 12;
 int qIndex = 11;
 int wIndex = 10;
-int pauseIndex = 20;
+int pauseIndex = 21;
 Rectangle resume = new Rectangle(width/2, height/3, width/9, height/6, res);
 Rectangle restart = new Rectangle(width/2, height/3, width/9, height/6, reset);
 Rectangle exit = new Rectangle(width/2, height/3, width/9, height/6, ex);
@@ -44,7 +44,7 @@ void setup() {
   Rectangle lRule1 = new Rectangle(width/2 - (width/8), height*4/10, width/4, width/20, #0000FF);
   Rectangle lRule2 = new Rectangle(width/2 - (width/8), height*5/10, width/4, width/20, #FF7000);
   Rectangle lRule3 = new Rectangle(width/2 - (width/8), height*6/10, width/4, width/20, #FF0000);
-
+  Rectangle sSaver = new Rectangle(width-(width/6), height-(height/20), width/6, height/20, #FF00FF);
   Rectangle rRule = new Rectangle(width-lRule.x-lRule.w, height*3/10, width/4, width/20, #FF00FF);
 
   Rectangle rules  = new Rectangle(width/5, height/15, width*3/5, height*2/15, #FF00FF);
@@ -84,6 +84,7 @@ void setup() {
  
   Shapes.add(rules);
   Shapes.add(start);
+  Shapes.add(sSaver);
   Shapes.add(pause);
 };//end setup
 
@@ -188,14 +189,28 @@ void mousePressed() {
   };
     if(rules == true){
    //if (mouse){};
-      
-      
+       while(lPaddleSpeed == 0){
+       if (mouseX >= Shapes.get(15).x && mouseX <= Shapes.get(15).x + Shapes.get(15).w && mouseY >= Shapes.get(15).y && mouseY <= Shapes.get(15).y+Shapes.get(15).h){
+  lPaddleSpeed = -3;
+    lRules = true;
+       rRules = true;
+};
+       if (mouseX >= Shapes.get(16).x && mouseX <= Shapes.get(16).x + Shapes.get(16).w && mouseY >= Shapes.get(16).y && mouseY <= Shapes.get(16).y+Shapes.get(16).h){
+       lPaddleSpeed = -5;
+       lRules = true;
+       rRules = true;
+       };
+       if (mouseX >= Shapes.get(17).x && mouseX <= Shapes.get(17).x + Shapes.get(17).w && mouseY >= Shapes.get(17).y && mouseY <= Shapes.get(17).y+Shapes.get(17).h){
+       lPaddleSpeed = -7;
+       lRules = true;
+       rRules = true;
+       };
+       };
+      if(lRules == true && rRules == true){
    if (mouseX >= Shapes.get(19).x && mouseX <= Shapes.get(19).x + Shapes.get(19).w && mouseY >= Shapes.get(19).y && mouseY <= Shapes.get(19).y+Shapes.get(19).h){
      rules = false; 
-     lRules = true;
-     rRules = true;
    };
-   
+      };
    };
 };//end mouse pressed
 

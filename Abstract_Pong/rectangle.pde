@@ -54,6 +54,7 @@ class Rectangle extends Shape {
       
     text("Score 3 Goals To Win The Game!",Shapes.get(18).x,Shapes.get(18).y,Shapes.get(18).w,Shapes.get(18).h);
     text("Click Here to Play! Press i at Anytime to Pause!",Shapes.get(19).x,Shapes.get(19).y,Shapes.get(19).w,Shapes.get(19).h);
+    text("ScreenSaver",Shapes.get(20).x,Shapes.get(20).y,Shapes.get(20).w,Shapes.get(20).h);
     };
     hover();
     //move();
@@ -72,6 +73,9 @@ if (mouseX >= Shapes.get(17).x && mouseX <= Shapes.get(17).x + Shapes.get(17).w 
   Shapes.get(17).c = #FF0030;
 }else Shapes.get(17).c = #FF0000;
 
+if (mouseX >= Shapes.get(20).x && mouseX <= Shapes.get(20).x + Shapes.get(20).w && mouseY >= Shapes.get(20).y && mouseY <= Shapes.get(20).y+Shapes.get(20).h){
+  Shapes.get(20).c = #FF30FF;;
+}else Shapes.get(20).c = #FF00FF;
   };
   void sBScore() {
     if (lScore == 0) {

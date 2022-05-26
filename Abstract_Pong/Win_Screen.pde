@@ -1,6 +1,6 @@
 void winScreen() {
   background(225);
-  for (int i = 10; i < Shapes.size()-8; i++) {
+  for (int i = 10; i < Shapes.size()-9; i++) {
     Shapes.get(i).draw();
   };
 
