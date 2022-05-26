@@ -14,7 +14,10 @@ class Rectangle extends Shape {
       
       if (moveUP == true) y += lPaddleSpeed;
       if (moveDown == true) y -= lPaddleSpeed;
-      
+         if(screenSaver == true){
+      Shapes.get(lIndex).y = Shapes.get(ballIndex).y  - Shapes.get(lIndex).h/2 ;
+      Shapes.get(rIndex).y = Shapes.get(ballIndex).y - Shapes.get(rIndex).h/2;
+      };
       
       if (y <= height*0) {
         y = height*0;
@@ -22,8 +25,10 @@ class Rectangle extends Shape {
       if (y >= height - h) {
         y = height - h;
       };
+      
+   
     };
-
+  
     fill(c);
     rect(x, y, w, h);
     fill(0);

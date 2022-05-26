@@ -9,7 +9,7 @@ color res = 210, ex = 210, reset = 210;
 PFont pauseFont;
 boolean rGoal, lGoal, rWin = false, lWin = false, rBool = false, redo = false;
 boolean rules = true, lRules = false, rRules = false;
-boolean lSlow = false,lReg = false,lFast = false,rSlow = false,rReg = false,rFast = false;
+boolean lSlow = false,lReg = false,lFast = false,rSlow = false,rReg = false,rFast = false,screenSaver = false;
 int lScore = 0;
 int rScore = 0;
 int lPaddleSpeed = 0;
@@ -186,7 +186,14 @@ void mousePressed() {
     if (mouseX >= Shapes.get(resetIndex).x && mouseX <= Shapes.get(resetIndex).x + Shapes.get(resetIndex).w && mouseY >= Shapes.get(resetIndex).y && mouseY <= Shapes.get(resetIndex).y+Shapes.get(resetIndex).h) {
       reset();
     };  
-  };
+  }; 
+  if (mouseX >= Shapes.get(20).x && mouseX <= Shapes.get(20).x + Shapes.get(20).w && mouseY >= Shapes.get(20).y && mouseY <= Shapes.get(20).y+Shapes.get(20).h){
+      rules = false;
+      lRules = true;
+      rRules = true;
+      screenSaver = true;
+    
+      };
     if(rules == true){
    //if (mouse){};
        while(lPaddleSpeed == 0){
@@ -211,6 +218,7 @@ void mousePressed() {
      rules = false; 
    };
       };
+     
    };
 };//end mouse pressed
 
