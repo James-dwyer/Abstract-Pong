@@ -1,6 +1,6 @@
 //global variables
 Line lLine, rLine, mLine;
-//ADD RULES SCREEN WITH SCREEN SAVER
+
 ArrayList<Shape> Shapes = new ArrayList<Shape>();
 boolean instructions = false;
 color bColor = color((int(random(0, 255))), int(random(0, 255)), int(random(0, 255)));
@@ -20,7 +20,7 @@ int rIndex = 3;
 int resetIndex = 12;
 int qIndex = 11;
 int wIndex = 10;
-int pauseIndex = 23;
+int pauseIndex = 20;
 Rectangle resume = new Rectangle(width/2, height/3, width/9, height/6, res);
 Rectangle restart = new Rectangle(width/2, height/3, width/9, height/6, reset);
 Rectangle exit = new Rectangle(width/2, height/3, width/9, height/6, ex);
@@ -41,14 +41,12 @@ void setup() {
   textAlign(CENTER, CENTER); 
   Circle cHex = new Circle(width/2, height/2, width/75, width/75, bColor);
   Rectangle  lRule = new Rectangle(width/10, height*3/10, width/4, width/20, #FF00FF);
-  Rectangle lRule1 = new Rectangle(width/10, height*4/10, width/4, width/20, #0000FF);
-  Rectangle lRule2 = new Rectangle(width/10, height*5/10, width/4, width/20, #FF7000);
-  Rectangle lRule3 = new Rectangle(width/10, height*6/10, width/4, width/20, #FF0000);
+  Rectangle lRule1 = new Rectangle(width/2 - (width/8), height*4/10, width/4, width/20, #0000FF);
+  Rectangle lRule2 = new Rectangle(width/2 - (width/8), height*5/10, width/4, width/20, #FF7000);
+  Rectangle lRule3 = new Rectangle(width/2 - (width/8), height*6/10, width/4, width/20, #FF0000);
 
   Rectangle rRule = new Rectangle(width-lRule.x-lRule.w, height*3/10, width/4, width/20, #FF00FF);
-  Rectangle rRule1 = new Rectangle(width-lRule.x-lRule.w, height*4/10, width/4, width/20, #0000FF);
-  Rectangle rRule2 = new Rectangle(width-lRule.x-lRule.w, height*5/10, width/4, width/20, #FF7000);
-  Rectangle  rRule3 = new Rectangle(width-lRule.x-lRule.w, height*6/10, width/4, width/20, #FF0000);
+
   Rectangle rules  = new Rectangle(width/5, height/15, width*3/5, height*2/15, #FF00FF);
   Rectangle start = new Rectangle(width*3/10, height*5/7, width*2/5, height/8, #FF00FF);
   Rectangle lPaddle = new Rectangle(width/50, height/2-(height/5)/2, width/85, height/5, #FF0000);
@@ -78,13 +76,12 @@ void setup() {
   Shapes.add(pAgain);
 
   Shapes.add(lRule);
+  Shapes.add(rRule);
   Shapes.add(lRule1);
   Shapes.add(lRule2);
   Shapes.add(lRule3);
-  Shapes.add(rRule);
-  Shapes.add(rRule1);
-  Shapes.add(rRule2);
-  Shapes.add(rRule3);
+  
+ 
   Shapes.add(rules);
   Shapes.add(start);
   Shapes.add(pause);
@@ -193,7 +190,7 @@ void mousePressed() {
    //if (mouse){};
       
       
-   if (mouseX >= Shapes.get(22).x && mouseX <= Shapes.get(22).x + Shapes.get(22).w && mouseY >= Shapes.get(22).y && mouseY <= Shapes.get(22).y+Shapes.get(22).h){
+   if (mouseX >= Shapes.get(19).x && mouseX <= Shapes.get(19).x + Shapes.get(19).w && mouseY >= Shapes.get(19).y && mouseY <= Shapes.get(19).y+Shapes.get(19).h){
      rules = false; 
      lRules = true;
      rRules = true;

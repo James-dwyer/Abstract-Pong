@@ -1,6 +1,6 @@
 class Rectangle extends Shape {
   //gobal variables
-  float lPaddleSpeed = -3, rPaddleSpeed = -7;
+  float lPaddleSpeed = -5, rPaddleSpeed = -7;
   boolean moveUP = false;
   boolean moveDown = false;
 
@@ -12,11 +12,10 @@ class Rectangle extends Shape {
   void draw() {
     if (instructions == false) {
       
-      if (moveUP == true) Shapes.get(lIndex).y += lPaddleSpeed;
-      if (moveDown == true) Shapes.get(lIndex).y -= lPaddleSpeed;
+      if (moveUP == true) y += lPaddleSpeed;
+      if (moveDown == true) y -= lPaddleSpeed;
       
-      if (moveUP == true) Shapes.get(rIndex).y += rPaddleSpeed;
-      if (moveDown == true) Shapes.get(rIndex).y -= rPaddleSpeed;
+      
       if (y <= height*0) {
         y = height*0;
       };
@@ -47,38 +46,32 @@ class Rectangle extends Shape {
     };
     if(rules == true){
     text("Left: W and S",Shapes.get(13).x,Shapes.get(13).y,Shapes.get(13).w,Shapes.get(13).h);
-    text("Slow",Shapes.get(14).x,Shapes.get(14).y,Shapes.get(14).w,Shapes.get(14).h);
-    text("Regular",Shapes.get(15).x,Shapes.get(15).y,Shapes.get(15).w,Shapes.get(15).h);
-    text("Fast",Shapes.get(16).x,Shapes.get(16).y,Shapes.get(16).w,Shapes.get(16).h);
-    text("Right: UP and Down",Shapes.get(17).x,Shapes.get(17).y,Shapes.get(17).w,Shapes.get(17).h);
-    text("Slow",Shapes.get(18).x,Shapes.get(18).y,Shapes.get(18).w,Shapes.get(18).h);
-    text("Regular",Shapes.get(19).x,Shapes.get(19).y,Shapes.get(19).w,Shapes.get(19).h);
-    text("Fast",Shapes.get(20).x,Shapes.get(20).y,Shapes.get(20).w,Shapes.get(20).h);
-    text("Score 3 Goals To Win The Game!",Shapes.get(21).x,Shapes.get(21).y,Shapes.get(21).w,Shapes.get(21).h);
-    text("Click Here to Play! Press i at Anytime to Pause!",Shapes.get(22).x,Shapes.get(22).y,Shapes.get(22).w,Shapes.get(22).h);
+    
+    text("Right: UP and Down",Shapes.get(14).x,Shapes.get(14).y,Shapes.get(14).w,Shapes.get(14).h);
+    text("Slow",Shapes.get(15).x,Shapes.get(15).y,Shapes.get(15).w,Shapes.get(15).h);
+     text("Regular",Shapes.get(16).x,Shapes.get(16).y,Shapes.get(16).w,Shapes.get(16).h);
+      text("Fast",Shapes.get(17).x,Shapes.get(17).y,Shapes.get(17).w,Shapes.get(17).h);
+      
+    text("Score 3 Goals To Win The Game!",Shapes.get(18).x,Shapes.get(18).y,Shapes.get(18).w,Shapes.get(18).h);
+    text("Click Here to Play! Press i at Anytime to Pause!",Shapes.get(19).x,Shapes.get(19).y,Shapes.get(19).w,Shapes.get(19).h);
     };
+    hover();
     //move();
   };
-  void pSpeed(){
-  if(lSlow == true){
-  lPaddleSpeed = -3;
-  };
-  if(lReg == true){
-  lPaddleSpeed = -6;
-  };
-  if(lFast == true){
-  lPaddleSpeed = -10;
-  };
-  if(rSlow == true){
-  lPaddleSpeed = -3;
-  };
-  if(rReg == true){
-  lPaddleSpeed = -6;
-  };
-  if(rFast == true){
-  lPaddleSpeed = -10;
-  };
-  
+  void hover(){
+if (mouseX >= Shapes.get(19).x && mouseX <= Shapes.get(19).x + Shapes.get(19).w && mouseY >= Shapes.get(19).y && mouseY <= Shapes.get(19).y+Shapes.get(19).h){
+  Shapes.get(19).c = #FF30FF;
+}else Shapes.get(19).c = #FF00FF;
+  if (mouseX >= Shapes.get(16).x && mouseX <= Shapes.get(16).x + Shapes.get(16).w && mouseY >= Shapes.get(16).y && mouseY <= Shapes.get(16).y+Shapes.get(16).h){
+  Shapes.get(16).c = #FF7030;
+}else Shapes.get(16).c = #FF7000;
+if (mouseX >= Shapes.get(15).x && mouseX <= Shapes.get(15).x + Shapes.get(15).w && mouseY >= Shapes.get(15).y && mouseY <= Shapes.get(15).y+Shapes.get(15).h){
+  Shapes.get(15).c = #0030FF;
+}else Shapes.get(15).c = #0000FF;
+if (mouseX >= Shapes.get(17).x && mouseX <= Shapes.get(17).x + Shapes.get(17).w && mouseY >= Shapes.get(17).y && mouseY <= Shapes.get(17).y+Shapes.get(17).h){
+  Shapes.get(17).c = #FF0030;
+}else Shapes.get(17).c = #FF0000;
+
   };
   void sBScore() {
     if (lScore == 0) {
